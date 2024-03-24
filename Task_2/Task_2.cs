@@ -21,18 +21,31 @@ namespace Skillbox
                     string currentCardName = Console.ReadLine();
                     if (currentCardName != string.Empty)
                     {
-                        if (currentCardName == "J" || currentCardName == "Q" || currentCardName == "K" || currentCardName == "A")
+                        switch (currentCardName)
                         {
-                            sum += 10;
-                        }
-                        else if ((int.Parse(currentCardName) > 1) && (11 > int.Parse(currentCardName)))
-                        {
-                            sum += int.Parse(currentCardName);
-                        }
-                        else
-                        {
-                            Console.WriteLine("такой карты не существует");
-                            i--;
+                            case "J":
+                                sum += 10;
+                                break;
+                            case "Q":
+                                sum += 10;
+                                break;
+                            case "K":
+                                sum += 10;
+                                break;
+                            case "A":
+                                sum += 10;
+                                break;
+                            default:
+                                if ((int.Parse(currentCardName) > 1) && (11 > int.Parse(currentCardName)))
+                                {
+                                    sum += int.Parse(currentCardName);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("такой карты не существует");
+                                    i--;
+                                }
+                                break;
                         }
                     }
                     else
